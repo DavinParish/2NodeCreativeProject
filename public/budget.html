@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheets/style.css" />
+  <title>Budget Tracker</title>
+</head>
+
+<body>
+    <!--HEADER-->
+    <h1 class = "title-bar">Budget Tracker</h1>
+    <hr class = "border">
+    <div class = "bg-container">
+        <!--NAVIGATION BAR-->
+        <nav class="navbar navbar-expand-sm navbar-light bg-nav">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand" href="#"></a>
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 mx-md-auto mx-0">
+              <li class="nav-item">
+                <a class="nav-link" id = "home" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" id = "Budget" href="budget.html">Budget</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!--END OF NAVIGATION BAR--->
+    </div>
+    <!--END OF HEADER-->
+    
+    <div class = "page">
+        <div class = "page-content">
+            <div id="app">
+              <button @click="openForm('editBudgetForm')">Edit Budget</button>
+              <button @click="openForm('createBudgetForm')">Create a Budget</button>
+              
+              
+              
+              <div class="form-popup" id="createBudgetForm">
+                <form class="form-container">
+                  <h1>Create Your Budget</h1>
+                  
+                  <label for="category"><b>Category</b></label>
+                  <input type="text" placeholder="Category" name="category" v-model = "categoryName">
+                  <label for="allotment"><b>Allotment</b></label>
+                  <input type="text" placeholder="Allotment" name="allotment" v-model = "allotment">
+                  <button  type="button" @click="addItem()" class = "btn">Add</button>
+                  
+                  <ul>
+                    <li v-for="item in categories">
+                      <label>
+                        {{ item.categoryName }}
+                        {{ item.allotment }}
+                      </label>
+                      <button @click="deleteItem(item)" class="delete">X</button>
+                    </li>
+                  </ul>
+                  
+                  
+                  <button class="btn cancel" @click="closeForm('createBudgetForm')">Close</button>
+                </form>
+              </div>
+              
+              <div class="form-popup" id="editBudgetForm">
+                <form class="form-container">
+                  <h1>Edit Your Budget</h1>
+              
+                  <label for="category"><b>Category</b></label>
+                  <input type="text" placeholder="Category" name="category">
+                  <label for="allotment"><b>Allotment</b></label>
+                  <input type="text" placeholder="Allotment" name="allotment">
+                  <!--<button  @click="getItems()" class = "btn">Add</button>-->
+                  
+                  <button class="btn cancel" @click="closeForm('editBudgetForm')">Close</button>
+                </form>
+              </div>
+              
+              
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <footer id = "home-footer">
+        <div id = "author-info">
+            <p>Created by: Davin Parish</p>
+            </div>
+            <div id = "social-info">
+            <p>Github: <a href="https://github.com/DavinParish/NodeCreativeProject" id = "ghub-link">
+            <i>Github</i></a></p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" integrity="sha256-lrZTgsdM1iVdRigETFOU8u8/BmLX1ysQ8bzrULbuVFU=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="javascripts/script.js"></script>
+</body>
+
+</html>
