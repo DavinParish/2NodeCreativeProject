@@ -5,18 +5,44 @@ var app = new Vue({
     categories: [],
     categoryName: '',
     allotment: '',
-    dataPoints: [],
-  },
-  colorPallette: [
+    barWidth: '',
+    colorPallette: [
     "#705451",
     "#C5817F",
     "#6181A7",
     "#73DCDD",
     ],
+    
+  },
+  
   created: function() {
   this.getCategories();
-},
+  },
+  computed: {
+  	styles: function() {
+  		var width = 200;
+  		var max = this.getMax();
+      var multiplier = 100/max;
+  		return {
+  			'background-color': 'blue',
+  		// 	width: (2) + '%',
+  		};
+  	},
+  	 
+  },
   methods: {
+    getMax(){
+  	  var max = this.categories[0].allotment;
+  	  for(let i = 0; i < this.categories.size; i++){
+  	    console.log(this.categories[i].allotment);
+  	    if(this.categories[i].allotment > max){
+  	      max = this.categories[i].allotment;
+  	    }
+  	  }
+  	},
+    getBarSize(){
+      return "50px";
+    },
     openForm(formId) {
       document.getElementById(formId).style.display = "block";
     },
@@ -43,6 +69,13 @@ var app = new Vue({
       } catch (error) {
         console.log(error);
       }
+      return false;
+    },
+    getBarWidth(number){
+      number /= 2;
+      this.barWidth = number +"px";
+      return this.barWidth;
+      
     },
     showAll() {
       this.show = 'all';

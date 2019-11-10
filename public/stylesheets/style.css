@@ -154,10 +154,10 @@ footer {
   top:25px;
   /*bottom: 0;*/
   margin-right:40%;
-  overflow-y: scroll;
+  /*overflow-y: scroll;*/
   bottom:10%;
   right: 15px;
-  border: 3px solid #f1f1f1;
+  /*border: 3px solid #705451;*/
   z-index: 9;
 }
 
@@ -165,7 +165,8 @@ footer {
 .form-container {
   max-width: 300px;
   padding: 10px;
-  background-color: white;
+  border: 3px solid #705451;
+  background-color: #B4CFDD;
 }
 
 /* Full-width input fields */
@@ -184,7 +185,7 @@ footer {
 /*}*/
 
 .form-container .btn {
-  background-color: #4CAF50;
+  background-color: #6181A7;
   color: white;
   padding: 16px 20px;
   border: none;
@@ -195,7 +196,7 @@ footer {
 }
 
 .form-container .cancel {
-  background-color: red;
+  background-color: #C5817F;
 }
 
 /* Add some hover effects to buttons */
@@ -206,15 +207,19 @@ footer {
 .graph-box{
   display:flex;
   padding-top:50px;
+  padding-bottom:30px;
   flex-direction:column;
   min-width:200px;
   min-height:200px;
-  background-color:grey;
+  background-color: #B4CFDD;
+  border: 2px ridge #705451;
+  border-top:0px;
   margin-bottom:25px;
 }
 .bar{
   min-width:25px;
   margin: 15px;
+  margin-left:0px;
   min-height:25px;
   background-color: #C5817F;
 }
@@ -222,4 +227,19 @@ footer {
 .button{
   text-align:center;
   margin-left:43%;
+  border-radius:10px;
+  border: 1px groove #597698;
+  background-color: #6181A7;
+}
+.delete{
+  border-radius:10px;
+  margin-left:15px;
+  border: .2px solid rgba(112, 84, 81, .2);
+  background-color: rgba(97, 129, 167, .2);
+  color:#C5817F;
+  height: 25px;
+  padding-top:0;
+  padding-bottom: 15px;
+  text-align:center;
+  
 }

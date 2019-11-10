@@ -45,8 +45,10 @@
         <!--BAR CHART-->
         <div class = "graph-box" >
           
-          <div v-for="item in categories" class="bar" style="width:var({{item.allotment}}">
-            
+          <div v-for="(item, index) in categories" class="bar" v-bind:style="[styles]">
+            {{item.categoryName}} --- ${{item.allotment}}
+             <!--v-bind:style="{'background-color': colorPallette[index%5]}"-->
+             
           </div>
           <!--<br>-->
           
@@ -71,10 +73,9 @@
             <ul>
               <li v-for="item in categories">
                 <label>
-                  {{ item.categoryName }}
-                  {{ item.allotment }}
+                  {{ item.categoryName }} --- ${{ item.allotment }}
                 </label>
-                <button @click="deleteItem(item)" class="delete">X</button>
+                <button type = "button" @click="deleteItem(item)" class="delete">X</button>
               </li>
             </ul>
             
@@ -106,7 +107,7 @@
         <p>Created by: Davin Parish</p>
         </div>
         <div id = "social-info">
-        <p>Github: <a href="https://github.com/DavinParish/NodeCreativeProject" id = "ghub-link">
+        <p>Github: <a href="https://github.com/DavinParish/2NodeCreativeProject" id = "ghub-link">
         <i>Github</i></a></p>
     </div>
   </footer>
