@@ -43,13 +43,12 @@
         
         
         <!--BAR CHART-->
-        <div class = "graph-box" >
-          
-          <div v-for="(item, index) in categories" class="bar" v-bind:style="[styles]">
-            {{item.categoryName}} --- ${{item.allotment}}
+        <div id = "graph-box">
+          <!--<div v-for="(item, index) in categories" class="bar" v-bind:style="{'background-color': colorPallette[index%5]}">-->
+          <!--  {{item.categoryName}} --- ${{item.allotment}}-->
              <!--v-bind:style="{'background-color': colorPallette[index%5]}"-->
              
-          </div>
+          <!--</div>-->
           <!--<br>-->
           
           

@@ -204,7 +204,7 @@ footer {
   opacity: 1;
 }
 
-.graph-box{
+#graph-box{
   display:flex;
   padding-top:50px;
   padding-bottom:30px;
@@ -214,14 +214,15 @@ footer {
   background-color: #B4CFDD;
   border: 2px ridge #705451;
   border-top:0px;
+  border-right:0px;
   margin-bottom:25px;
 }
 .bar{
-  min-width:25px;
+  /*min-width:25px;*/
   margin: 15px;
   margin-left:0px;
   min-height:25px;
-  background-color: #C5817F;
+  /*background-color: #C5817F;*/
 }
 
 .button{
